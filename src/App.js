@@ -11,10 +11,15 @@ import NotFound from './components/NotFound'
 import './App.css'
 
 class App extends Component {
-  state = {isDarkTheme: true}
+  state = {isDarkTheme: false}
+
+  toggleTheme = () => {
+    this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
+  }
 
   render() {
     const {isDarkTheme} = this.state
+
     return (
       <ThemeContext.Provider
         value={{isDarkTheme, toggleTheme: this.toggleTheme}}

@@ -7,28 +7,23 @@ const Home = () => (
     {value => {
       const {isDarkTheme} = value
 
+      const homeContainer = isDarkTheme
+        ? 'home-container-dark'
+        : 'home-container'
+
+      const homeImageURL = isDarkTheme
+        ? 'https://assets.ccbp.in/frontend/react-js/home-dark-img.png'
+        : 'https://assets.ccbp.in/frontend/react-js/home-light-img.png'
+
+      const homeHeading = isDarkTheme ? 'dark-home-heading' : 'home-heading'
       return (
         <>
           <Navbar />
-          {isDarkTheme ? (
-            <div className="home-container-dark">
-              <img
-                className="home-img"
-                alt="home"
-                src="https://assets.ccbp.in/frontend/react-js/home-dark-img.png"
-              />
-              <h1 className="dark-home-heading">Home</h1>
-            </div>
-          ) : (
-            <div className="home-container">
-              <img
-                className="home-img"
-                alt="home"
-                src="https://assets.ccbp.in/frontend/react-js/home-light-img.png"
-              />
-              <h1 className="home-heading">Home</h1>
-            </div>
-          )}
+
+          <div className={homeContainer}>
+            <img className="home-img" alt="home" src={homeImageURL} />
+            <h1 className={homeHeading}>Home</h1>
+          </div>
         </>
       )
     }}

@@ -1,1 +1,8 @@
 /* Write your CSS here */
+
+.light-details {
+  color: #000000;
+}
+.dark-details {
+  color: #ffffff;
+}
